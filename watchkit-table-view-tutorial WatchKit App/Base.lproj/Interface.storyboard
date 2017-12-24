@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchkit_table_view_tutorial_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="fky-OA-4JO">
+                            <items>
+                                <tableRow identifier="RowController" id="Cmi-Ei-Xqc" customClass="RowController" customModule="watchkit_table_view_tutorial_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="SHy-56-8nz">
+                                        <items>
+                                            <label width="133" height="45" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="lIZ-1l-Agr"/>
+                                        </items>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowLabel" destination="lIZ-1l-Agr" id="jJM-Fo-zwT"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="fky-OA-4JO" id="6bJ-ty-qq8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="149" y="259"/>
+        </scene>
+        <!--DetailInterfaceController-->
+        <scene sceneID="Nkh-xa-m8J">
+            <objects>
+                <controller identifier="DetailInterfaceController" id="PkC-wO-SQ1" customClass="DetailInterfaceController" customModule="watchkit_table_view_tutorial_WatchKit_Extension">
+                    <items>
+                        <label width="136" height="160" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="Muu-uz-ZbP"/>
+                    </items>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="detailLabel" destination="Muu-uz-ZbP" id="HhR-E2-3Hp"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="502" y="259"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="watchkit_table_view_tutorial_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
